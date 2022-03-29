@@ -23,7 +23,9 @@ from blog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('blog/', blog, name='blog')
+    path('blog/', blog, name='blog'),
+    path('index/', home, name='home'),
+    path('', include('about.urls')),
 ]
 
 if DEBUG:

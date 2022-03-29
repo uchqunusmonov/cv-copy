@@ -18,4 +18,6 @@ def blog(request):
         'form': form,
         # 'forms':forms,
     }
-    return render(request, 'base.html', context)
+    return render(request, 'index.htm', context)
+def home(request):
+    return render(request, 'index.html')
