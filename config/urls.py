@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('about.urls')),
     path('career/', include('career.urls')),
+    path("ckeditor/", include('ckeditor_uploader.urls')),
+    path('', include('product.urls')),
 ]
 
 if DEBUG:

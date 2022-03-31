@@ -1,9 +1,7 @@
-from unicodedata import name
 from django.urls import path
-from .views import Home, about_us
-
-
-urlpatterns=[
-    path('',Home.as_view(), name='home'),
-    path('about', about_us, name='about'),
+from .views import *
+urlpatterns = [
+    path('', home, name='home'),
+    path('about-us/', about_us, name='about'),
+    path('our-team/', our_team, name='our-team')
 ]

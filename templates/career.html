@@ -719,7 +719,7 @@
                     >
                       <div class="elementor-widget-container">
                         <div class="wgl-logotype-container default_logo">
-                          <a href="index.html"
+                          <a href="{% url 'home' %}"
                             ><img
                               class="default_logo"
                               src="{% static 'wp-content/uploads/2021/06/logo1.png' %}"
@@ -815,9 +815,9 @@
                           <ul id="menu-main" class="menu">
                             <li
                               id="menu-item-5729"
-                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
+                              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                             >
-                              <a href="index.htm"
+                              <a href="{% url 'home' %}"
                                 ><span
                                   ><span class="item_text">Home</span></span
                                 ></a>
@@ -826,7 +826,7 @@
                               id="menu-item-316"
                               class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                             >
-                              <a href="#"
+                              <a href="{% url 'about' %}"
                                 ><span
                                   ><span class="item_text">About Us</span></span
                                 ><i class="menu-item__plus"></i
@@ -838,7 +838,7 @@
                                   id="menu-item-2150"
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150"
                                 >
-                                  <a href="about-us/index.htm">
+                                  <a href="{% url 'about' %}">
                                     <span>
                                       <span class="item_text">About Us</span>
                                     </span>
@@ -872,7 +872,7 @@
                               id="menu-item-3129"
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                             >
-                              <a href="portfolio-grid/index.htm"
+                              <a href="{% url 'brand' %}"
                                 ><span
                                   ><span class="item_text"
                                     >Product</span
@@ -974,7 +974,7 @@
                             <li
                               class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                             >
-                              <a href="index.htm"
+                              <a href="{% url 'home' %}"
                                 ><span
                                   ><span class="item_text">Home</span></span
                                 ></a>
@@ -982,7 +982,7 @@
                             <li
                               class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                             >
-                              <a href="#"
+                              <a href="{% url 'about' %}"
                                 ><span
                                   ><span class="item_text">About Us</span></span
                                 ><i class="menu-item__plus"></i
@@ -993,7 +993,7 @@
                                 <li
                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150"
                                 >
-                                  <a href="about-us/index.htm"
+                                  <a href="{% url 'about' %}"
                                     ><span
                                       ><span class="item_text"
                                         >About Us</span
@@ -1023,7 +1023,7 @@
                             <li
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                             >
-                              <a href="portfolio-grid/index.htm"
+                              <a href="{% url 'brand' %}"
                                 ><span
                                   ><span class="item_text"
                                     >Product</span
@@ -1093,189 +1093,18 @@
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
                       >
-                        <a href="index.htm"
+                        <a href="{% url 'home' %}"
                           ><span><span class="item_text">Home</span></span
                           ><i class="menu-item__plus"></i
                         ></a>
-                        <ul
-                          class="wgl-mega-menu mega-menu sub-menu sub-menu-columns"
-                        >
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item menu-item-396"
-                          >
-                            <a href="index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  ><img
-                                    src="wp-content/uploads/2021/08/home1-mega.jpg"
-                                    alt=""
-                                  />Home 1</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730"
-                          >
-                            <a href="home-2/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  ><img
-                                    src="wp-content/uploads/2021/08/home2-mega.jpg"
-                                    alt=""
-                                  />Home 2</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5731"
-                          >
-                            <a href="home-3/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  ><img
-                                    src="wp-content/uploads/2021/08/home3-mega.jpg"
-                                    alt=""
-                                  />Home 3</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5732"
-                          >
-                            <a href="home-4/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  ><img
-                                    src="wp-content/uploads/2021/08/home4-mega.jpg"
-                                    alt=""
-                                  />Home 4</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                        </ul>
                       </li>
                       <li
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                       >
                         <a href="#"
-                          ><span><span class="item_text">Pages</span></span
+                          ><span><span class="item_text">About Us</span></span
                           ><i class="menu-item__plus"></i
                         ></a>
-                        <ul class="sub-menu wgl-submenu-position-default">
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150"
-                          >
-                            <a href="about-us/index.htm"
-                              ><span
-                                ><span class="item_text">About Us</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"
-                          >
-                            <a href="management/index.htm"
-                              ><span
-                                ><span class="item_text">Our Team</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-315"
-                          >
-                            <a href="team/harold-perish/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  >Team Single</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2324"
-                          >
-                            <a href="services/index.htm"
-                              ><span
-                                ><span class="item_text">Services</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                            <ul class="sub-menu wgl-submenu-position-default">
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5024"
-                              >
-                                <a href="single-service/index.htm"
-                                  ><span
-                                    ><span class="item_text"
-                                      >Single Service</span
-                                    ></span
-                                  ><i class="menu-item__plus"></i
-                                ></a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174"
-                          >
-                            <a href="elements/index.htm"
-                              ><span
-                                ><span class="item_text">Elements</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"
-                          >
-                            <a href="typography/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  >Typography</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1172"
-                          >
-                            <a href="strategy/index.htm"
-                              ><span
-                                ><span class="item_text">Strategy</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-929"
-                          >
-                            <a href="faqs/index.htm"
-                              ><span
-                                ><span class="item_text">FAQ`s</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3832"
-                          >
-                            <a href="coming-soon/index.htm"
-                              ><span
-                                ><span class="item_text"
-                                  >Coming Soon</span
-                                ></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5651"
-                          >
-                            <a href="https://wgl-demo.net/transmax/404"
-                              ><span
-                                ><span class="item_text">Page 404</span></span
-                              ><i class="menu-item__plus"></i
-                            ></a>
-                          </li>
-                        </ul>
                       </li>
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2684"
@@ -1287,7 +1116,7 @@
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                       >
-                        <a href="portfolio-grid/index.htm"
+                        <a href="{% url 'brand' %}"
                           ><span
                             ><span class="item_text">Product</span></span
                           ></a>
@@ -1298,6 +1127,14 @@
                         <a href="shop/index.htm"
                           ><span><span class="item_text">Services</span></span
                           ></a>
+                      </li>
+                      <li
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"
+                      >
+                        <a href="#"
+                          ><span><span class="item_text">Careers</span></span
+                          ><i class="menu-item__plus"></i
+                        ></a>
                       </li>
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"
@@ -1358,16 +1195,16 @@
                 <nav class="primary-nav">
                   <ul id="menu-main-3" class="menu">
                     <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                     >
-                      <a href="index.htm"
+                      <a href="{% url 'home' %}"
                         ><span><span class="item_text">Home</span></span
                         ></a>
                     </li>
                     <li
                       class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
                     >
-                      <a href="#"
+                      <a href="{% url 'about' %}"
                         ><span><span class="item_text">About Us</span></span
                         ><i class="menu-item__plus"></i
                       ></a>
@@ -1375,7 +1212,7 @@
                         <li
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150"
                         >
-                          <a href="about-us/index.htm"
+                          <a href="{% url 'about' %}"
                             ><span
                               ><span class="item_text">About Us</span></span
                             ></a>
@@ -1401,7 +1238,7 @@
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3129"
                     >
-                      <a href="portfolio-grid/index.htm"
+                      <a href="{% url 'brand' %}"
                         ><span><span class="item_text">Product</span></span
                         ></a>
                     </li>
@@ -1413,9 +1250,9 @@
                         ></a>
                     </li>
                     <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5082"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
                     >
-                      <a href="shop/index.htm"
+                      <a href="#"
                         ><span><span class="item_text">Careers</span></span
                         ></a>
                     </li>
@@ -1464,7 +1301,7 @@
               style="color: #ffffff; font-size: 14px; line-height: 24px"
             >
               <div class="breadcrumbs">
-                <a href="../index.htm" class="home">Home</a
+                <a href="{% url 'home' %}" class="home">Home</a
                 ><span class="divider"></span
                 ><span class="current">Career</span>
               </div>
