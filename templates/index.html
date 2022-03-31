@@ -2178,6 +2178,8 @@
                                                                         data-swiper='{"watchOverflow":true,"infinite":false,"variableWidth":false,"autoplay":true,"autoplaySpeed":4000,"speed":3000,"arrows":false,"dots":true,"adaptiveHeight":true,"responsive":[{"breakpoint":1600,"slidesToShow":"3","slidesToScroll":1},{"breakpoint":1201,"slidesToShow":"3","slidesToScroll":1},{"breakpoint":768,"slidesToShow":"2","slidesToScroll":1},{"breakpoint":280,"slidesToShow":"1","slidesToScroll":1}]}'
                                                                         data-item-carousel='wgl_carousel_6128d22a81b46'>
                                                                         <div class="swiper-wrapper">
+
+                                                                            {% for item in blogs %}
                                                                             <div class="item wgl_col-4 swiper-slide">
                                                                                 <div
                                                                                     class="blog-post format-standard-image">
@@ -2185,40 +2187,30 @@
                                                                                         <div class="blog-post_media">
                                                                                             <div
                                                                                                 class="blog-post_media_part">
-                                                                                                <a href="helping-companies-in-their-green-transition/index.htm"
+                                                                                                <a href="{{ item.get_absolute_url }}"
                                                                                                     class="media-link image-overlay"><img
-                                                                                                        src="{% static 'wp-content/uploads/2021/06/blog-01-740x560.jpg' %}"
+                                                                                                        src="{{ item.image.url }}"
                                                                                                         alt=""></a>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="blog-post_content">
-                                                                                            <span
-                                                                                                class="post_categories"><span><a
-                                                                                                        href="category/cargo/index.htm">CARGO</a></span><span><a
-                                                                                                        href="category/logistics/index.htm">LOGISTICS</a></span></span>
+
                                                                                             <div class="post_meta-wrap">
                                                                                                 <div class="meta-data">
                                                                                                     <span
                                                                                                         class="post_date">
-                                                                                                        June 18, 2021
+                                                                                                        {{ item.created_at |date:"d.M.Y" }}
                                                                                                     </span><span
-                                                                                                        class="post_author"><span>By
-                                                                                                            <a
-                                                                                                                href="author/developers/index.htm">Nina
-                                                                                                                Brown</a></span></span>
+                                                                                                        class="post_author"><span>{{ item.created_at |date:"H:m"  }}
+                                                                                                            </span></span>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <h3 class="blog-post_title">
                                                                                                 <a
-                                                                                                    href="helping-companies-in-their-green-transition/index.htm">Helping
-                                                                                                    Companies in Their
-                                                                                                    Green Transition</a>
+                                                                                                    href="{{ item.get_absolute_url }}">{{ item.title }}</a>
                                                                                             </h3>
                                                                                             <div class="blog-post_text">
-                                                                                                With the cargo business
-                                                                                                blasting, financier
-                                                                                                firms are bouncing
-                                                                                                from...</div>
+                                                                                                {{ item.short_text  }}...</div>
                                                                                             <div class="clear"></div>
                                                                                             <div
                                                                                                 class="blog-post_footer">
@@ -2227,6 +2219,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                            {% endfor %}
                                                                             <div class="item wgl_col-4 swiper-slide">
                                                                                 <div
                                                                                     class="blog-post format-standard-image">
@@ -2490,9 +2483,6 @@
             </div>
         </div>
     </main>
-
-
     <!-- footer -->
-
 
 {% endblock content %}

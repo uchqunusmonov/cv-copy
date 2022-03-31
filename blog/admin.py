@@ -18,8 +18,10 @@ class BlogAdminForm(forms.ModelForm):
 
 class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
+    search_fields = ['title', 'id']
     form = BlogAdminForm
-    list_display = ('id', 'title', 'text', 'get_photo', 'created_at')
+    list_display = ('id', 'title', 'get_photo', 'created_at')
+    list_display_links = ['title', 'id', 'get_photo']
 
     def get_photo(self, obj):
         if obj.image:
