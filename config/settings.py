@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My apps
+    
+    # team 2
+    'career',
 
     # Django apps and packegs
+    
+    # team 2
+    'ckeditor',
+    'hitcount',
 
 ]
 

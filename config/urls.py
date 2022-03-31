@@ -23,6 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('about.urls')),
+    path('career/', include('career.urls')),
 ]
 
 if DEBUG:
