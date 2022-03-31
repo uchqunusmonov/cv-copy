@@ -10,7 +10,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=300)
     text = models.TextField()
     image = models.ImageField(upload_to='blog/image')
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     short_text = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self) -> str:

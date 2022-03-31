@@ -18,7 +18,7 @@
     <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
-
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <!-- Bootstrap CSS-->
     <link href="{% static 'vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
 
@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="{% static 'images/icon/logo.png' %}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -230,7 +230,7 @@
                         </li>
 
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'blogform' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 Blog
                             </a>
@@ -391,8 +391,9 @@
 
     <!-- Main JS-->
     <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'sty.js' %}"></script>
 
-</body>
+    </div></body>
 
 </html>
 <!-- end document-->
