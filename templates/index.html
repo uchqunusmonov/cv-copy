@@ -341,7 +341,7 @@
                                             data-widget_type="wgl-header-logo.default">
                                             <div class="elementor-widget-container">
                                                 <div class="wgl-logotype-container default_logo"><a
-                                                        href="index.htm"><img class="default_logo"
+                                                        href="{% url 'home' %}"><img class="default_logo"
                                                             src="{% static 'wp-content/uploads/2021/06/logo1.png' %}" alt="logotype"
                                                             style="height: 43px;"></a></div>
                                             </div>
@@ -414,13 +414,13 @@
                                                             <ul class='sub-menu wgl-submenu-position-default'>
                                                                 <li id="menu-item-2150"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150">
-                                                                    <a href="#"><span><span
+                                                                    <a href="{% url 'about' %}"><span><span
                                                                                 class="item_text">About
                                                                                 Us</span></span><i
                                                                             class="menu-item__plus"></i></a></li>
                                                                 <li id="menu-item-2477"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477">
-                                                                    <a href="#"><span><span
+                                                                    <a href="{% url 'our-team' %}"><span><span
                                                                                 class="item_text">Our
                                                                                 Team</span></span><i
                                                                             class="menu-item__plus"></i></a></li>
@@ -433,8 +433,8 @@
                                                             </li>
                                                         <li id="menu-item-3129"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129">
-                                                            <a href="#"><span><span
-                                                                        class="item_text">Portfolio</span></span></a>
+                                                            <a href="{% url 'brand' %}"><span><span
+                                                                        class="item_text">Product</span></span></a>
                                                              </li>
                                                         <li id="menu-item-5082"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-5082">
@@ -482,7 +482,7 @@
                                             data-widget_type="wgl-header-logo.default">
                                             <div class="elementor-widget-container">
                                                 <div class="wgl-logotype-container default_logo"><a
-                                                        href="index.htm"><img class="default_logo"
+                                                        href="{% url 'home' %}"><img class="default_logo"
                                                             src="{% static 'wp-content/uploads/2021/06/logo1.png' %}" alt="logotype"
                                                             style="height: 43px;"></a></div>
                                             </div>
@@ -505,19 +505,19 @@
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
-                                                            <a href="#"><span><span
+                                                            <a href="{% url 'about' %}"><span><span
                                                                         class="item_text">About us</span></span><i
                                                                     class="menu-item__plus"></i></a>
                                                             <ul class='sub-menu wgl-submenu-position-default'>
                                                                 <li
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150">
-                                                                    <a href="a#"><span><span
+                                                                    <a href="{% url 'about' %}"><span><span
                                                                                 class="item_text">About
                                                                                 Us</span></span><i
                                                                             class="menu-item__plus"></i></a></li>
                                                                 <li
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477">
-                                                                    <a href="#"><span><span
+                                                                    <a href="{% url 'our-team' %}"><span><span
                                                                                 class="item_text">Our
                                                                                 Team</span></span><i
                                                                             class="menu-item__plus"></i></a></li>
@@ -533,8 +533,8 @@
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3129">
-                                                            <a href="#"><span><span
-                                                                        class="item_text">Portfolio</span></span><i
+                                                            <a href="{% url 'brand' %}"><span><span
+                                                                        class="item_text">Product</span></span><i
                                                                     class="menu-item__plus"></i></a>
                                                             
                                                         </li>
@@ -585,17 +585,17 @@
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
-                                                <a href="#"><span><span class="item_text">About us</span></span><i
+                                                <a href="{% url 'about' %}"><span><span class="item_text">About us</span></span><i
                                                         class="menu-item__plus"></i></a>
                                                 <ul class='sub-menu wgl-submenu-position-default'>
                                                     <li
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150">
-                                                        <a href="#"><span><span class="item_text">About
+                                                        <a href="{% url 'about' %}"><span><span class="item_text">About
                                                                     Us</span></span><i class="menu-item__plus"></i></a>
                                                     </li>
                                                     <li
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477">
-                                                        <a href="#"><span><span class="item_text">Our
+                                                        <a href="{% url 'our-team' %}"><span><span class="item_text">Our
                                                                     Team</span></span><i
                                                                 class="menu-item__plus"></i></a></li>
                                                     
@@ -610,8 +610,8 @@
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3129">
-                                                <a href="#"><span><span
-                                                            class="item_text">Portfolio</span></span><i
+                                                <a href="{% url 'brand' %}"><span><span
+                                                            class="item_text">Product</span></span><i
                                                         class="menu-item__plus"></i></a>
                                                 
                                             </li>
@@ -658,7 +658,7 @@
                                 </div>
                             </div>
                             <div class="wgl-menu-outer_content">
-                                <div class="wgl-logotype-container logo-menu"><a href="index.htm"><img class="logo-menu"
+                                <div class="wgl-logotype-container logo-menu"><a href="{% url 'home' %}"><img class="logo-menu"
                                             src="{% static 'wp-content/uploads/2021/06/logoSVcluster-white.png' %}" alt="logotype"
                                             style="height: 43px;"></a></div>
                                 <nav class="primary-nav">
@@ -669,16 +669,16 @@
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
-                                            <a href="#"><span><span class="item_text">About us</span></span><i
+                                            <a href="{% url 'about' %}"><span><span class="item_text">About us</span></span><i
                                                     class="menu-item__plus"></i></a>
                                             <ul class='sub-menu wgl-submenu-position-default'>
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2150">
-                                                    <a href="#"><span><span class="item_text">About
+                                                    <a href="{% url 'about' %}"><span><span class="item_text">About
                                                                 Us</span></span><i class="menu-item__plus"></i></a></li>
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477">
-                                                    <a href="#"><span><span class="item_text">Our
+                                                    <a href="{% url 'our-team' %}"><span><span class="item_text">Our
                                                                 Team</span></span><i class="menu-item__plus"></i></a>
                                                 </li>
                                                 
@@ -692,8 +692,8 @@
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3129">
-                                            <a href="#"><span><span
-                                                        class="item_text">Portfolio</span></span><i
+                                            <a href="{% url 'brand' %}"><span><span
+                                                        class="item_text">Product</span></span><i
                                                     class="menu-item__plus"></i></a>
                                             
                                         </li>

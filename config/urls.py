@@ -23,6 +23,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('about.urls')),
+    path("ckeditor/", include('ckeditor_uploader.urls')),
+    path('', include('product.urls')),
 ]
 
 if DEBUG:
