@@ -1,4 +1,3 @@
-from turtle import title
 from django.db import models
 from ckeditor.fields import RichTextField
 # Create your models here.
@@ -8,7 +7,7 @@ class Information(models.Model):
     title = models.CharField(max_length=250, blank=True, null=True)
     text = RichTextField()
     image = models.ImageField(upload_to='information/')
-    back_ground =  models.ImageField(upload_to='background/', blank=True, null=True)
+    back_ground = models.ImageField(upload_to='background/', blank=True, null=True)
     warehouse = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self) -> str:

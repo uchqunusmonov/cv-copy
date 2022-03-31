@@ -2,8 +2,8 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
-from hitcount.models import HitCount
-from hitcount.views import HitCountMixin
+# from hitcount.models import HitCount
+# from hitcount.views import HitCountMixin
 
 
 class Career(models.Model):
@@ -16,7 +16,7 @@ class Career(models.Model):
         return self.name
 
 
-class Vacancy(models.Model, HitCountMixin):
+class Vacancy(models.Model):
     JOB_CHOICES = [
         ('on', 'online'),
         ('off', 'offline')
