@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Blog
 from .forms import *
 from django.core.paginator import Paginator
-from django.db.models import Q
 
 
 # Create your views here.
@@ -31,14 +30,7 @@ def blog(request):
 
 def blogsingl(request, slug):
     forms = Blog.objects.get(slug=slug)
-    blogs = Blog.objects.all().order_by('-created_at')[:6]
-    # if 'search' in request.GET:
-    #     search = request.GET['search']
-    #     blogs = blogs.filter(Q(title__icontains=search) | Q(short_text__icontains=search))
-    # else:
-    #     blogs = Blog.objects.all().order_by('-created_at')[:4]
     context = {
         'forms': forms,
-        'blogs': blogs,
     }
     return render(request, 'blogSingl.html', context)

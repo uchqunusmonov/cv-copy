@@ -13,5 +13,7 @@ def home(request):
 def about_us(request):
     return render(request, 'about-us.html')
 
+def base_admin(request):
+    return render(request, 'admin_panel/index.html')
 
 
