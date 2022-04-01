@@ -34,52 +34,7 @@
         <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
-            <div class="section__content section__content--p30">
-                <div class="container-fluid">
-                    <div class="header-wrap">
-                        <div class="header-button">
-                            <div class="account-wrap" style="display: flex">
-                                <div class="account-item clearfix js-item-menu">
-                                    <div class="image">
-                                        <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
-                                    </div>
-                                    <div class="content">
-                                        <a class="js-acc-btn" href="#">john doe</a>
-                                    </div>
-                                    <div class="account-dropdown js-dropdown">
-                                        <div class="info clearfix">
-                                            <div class="image">
-                                                <a href="#">
-                                                    <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="name">
-                                                    <a href="#">john doe</a>
-                                                </h5>
-                                                <span class="email">johndoe@example.com</span>
-                                            </div>
-                                        </div>
-                                        <div class="account-dropdown__body">
-                                            <div class="account-dropdown__item">
-                                                <a href="{% url 'profile' request.user.username %}"><i class="zmdi zmdi-account"></i>Account</a>
-                                            </div>
-                                            <div class="account-dropdown__item" style="border-top: 1px solid #f2f2f2;">
-                                                <a href="{% url 'add-admin' %}"><i class="zmdi zmdi-account-add"></i>Add admin</a>
-                                            </div>
-                                        </div>
-                                        <div class="account-dropdown__footer">
-                                            <a href="{% url 'logout' %}"><i class="zmdi zmdi-power"></i>Logout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        {% include 'admin_panel/admin_header.html' %}
         <!-- HEADER DESKTOP-->
 
         <!-- MAIN CONTENT-->
@@ -88,27 +43,18 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-9">
-                            <h2 class="title-1 m-b-25">Career</h2>
+                            <h2 class="title-1 m-b-25">Edit Career page</h2>
                             <div class="au-card au-card--bg-blue au-card-top-countries m-b-40 uzunlik" >
                                 <div class="au-card-inner">
                                     <div class="form-responsive">
-                                        <form class="form form-top-countries">
-                                            <div class="career">
-                                                <label for="name">Name:</label>
-                                                <input id="name" type="text" placeholder="Name" name="name">
-                                            </div>
-                                            <div class="career">
-                                                <label for="image">Image:</label>
-                                                <input id="image" type="url" placeholder="Image" name="image">
-                                            </div>
-                                            <div class="career">
-                                                <label for="tel">Tel:</label>
-                                                <input id="tel" type="tel" placeholder="Phone number" name="phone">
-                                            </div>
-                                            <div class="career">
-                                                <label for="address">Address:</label>
-                                                <input id="address" type="text" placeholder="Adress" name="adress">
-                                            </div>
+                                        <form class="form form-top-countries" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                            {% for form in careerForm %}
+                                                <div style="margin-top: 50px;">
+                                                    <p style="color: white">{{ form.name }}</p>
+                                                    <p>{{ form }}</p>
+                                                </div>
+                                            {% endfor %}
+                                            <button class="btn btn-info button2">Edit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -121,22 +67,22 @@
                             <div class="au-card au-card--bg-blue au-card-top-countries m-b-40 uzunlik1">
                                 <div class="au-card-inner">
                                     <div class="table-responsive">
-                                        <form class="form form-top-countries">
+                                        <form class="form form-top-countries" method="post" enctype="multipart/form-data">{% csrf_token %}
                                             <div class="career">
                                                 <label for="last_name">Name:</label>
-                                                <input id="last_name" type="text" placeholder="Name" name="name">
+                                                <input id="last_name" type="name" placeholder="Name" name="name">
                                             </div>
                                             <div class="career">
-                                                <label for="desc">Desc:</label>
-                                                <textarea id="desc" name="desc" id="" cols="30" rows="5" placeholder="Desc"></textarea>
+                                                <label for="desc">Description:</label>
+                                                <textarea id="desc" name="description" id="" cols="30" rows="5" placeholder="description"></textarea>
                                             </div>
                                             <div class="career">
                                                 <label for="salary">Salary:</label>
-                                                <input id="salary" type="number" placeholder="Salary" name="salary">
+                                                <input id="salary" type="number" placeholder="enter the currency in dollars" name="salary">
                                             </div>
                                             <div class="career">
                                                 <label for="jobtype">Jobtype:</label>
-                                                <input  id="jobtype" type="text" placeholder="Jobtype" name="jobtype">
+                                                <input  id="jobtype" type="text" placeholder="Job type" name="job_type">
                                             </div>
                                             <div class="career">
                                                 <label for="graph">Graph:</label>

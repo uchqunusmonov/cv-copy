@@ -7,11 +7,6 @@ from .forms import *
 from career.forms import *
 from career.models import *
 
-
-def admin_vacancy(request):
-    return render(request, 'admin_panel/admin_vacancy.html')
-
-
 def adminPanel(request, username):
     
     try:
@@ -25,6 +20,38 @@ def adminPanel(request, username):
     }
     
     return render(request, 'admin_panel/index.html', context)    
+
+
+def admin_vacancy(request):
+    user = request.user
+    careerInfo = Career.objects.all().first()
+    
+    vacancyForm = VacancyForm()
+    careerForm = CareerForm(instance=careerInfo)
+    
+    if request.POST:
+        careerForm = CareerForm(request.POST or None, request.FILES or None, instance=careerInfo)
+        vacancyForm = VacancyForm(request.POST, request.FILES)
+
+        if careerForm.is_valid():
+            obj = careerForm.save(commit=False)
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if vacancyForm.is_valid():
+            obj = vacancyForm.save(commit=False)
+            obj.save()
+            
+            return redirect('admin-vacancy')
+            
+    
+    context = {
+        'user': user,
+        'careerForm': careerForm,
+        'vacancyForm': vacancyForm,
+    }
+    return render(request, 'admin_panel/admin_vacancy.html', context)
 
 
 def user_login(request):
@@ -53,22 +80,25 @@ def user_login(request):
 
 
 def addAdmin(request):
-    addAdminCreateForm = AddAdminCreateForm()
+    if request.user.username == 'admin':
+        addAdminCreateForm = AddAdminCreateForm()
 
-    if request.POST:
-        addAdminCreateForm = AddAdminCreateForm(request.POST)
-        
-        if addAdminCreateForm.is_valid():
-            obj = addAdminCreateForm.save(commit=False)
-            obj.save()
+        if request.POST:
+            addAdminCreateForm = AddAdminCreateForm(request.POST)
             
-            return redirect('login')
+            if addAdminCreateForm.is_valid():
+                obj = addAdminCreateForm.save(commit=False)
+                obj.save()
+                
+                return redirect('login')
+        
+        context = {
+        }
+        
+        return render(request, 'admin_panel/register.html', context)    
+    else:
+        return redirect('home')
     
-    context = {
-    }
-    
-    return render(request, 'admin_panel/register.html', context)    
-
 
 def user_logout(request):
     logout(request)
