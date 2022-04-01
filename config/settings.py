@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'hitcount',
+    'phonenumber_field',
+
 ]
 
 MIDDLEWARE = [

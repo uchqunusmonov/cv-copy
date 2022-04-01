@@ -5,10 +5,12 @@ from ckeditor.fields import RichTextField
 from django.contrib.contenttypes.fields import GenericRelation
 from hitcount.models import HitCount
 
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class Career(models.Model):
     name = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='Career/images/')
+    background = models.ImageField(upload_to='Career/images/')
     job_ads = models.TextField(verbose_name='Job advertisement title')
     tel = models.CharField(max_length=100)
     
@@ -34,7 +36,7 @@ class Vacancy(models.Model):
     graph = models.CharField(max_length=4, choices=GRAPH, default='full time')
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
-    active_date = models.DateField(blank=True)
+    active_date = models.DateField(blank=True, null=True)
     duties = models.ManyToManyField('Duties')
     requirements = models.ManyToManyField('Requirements')
     pros = models.ManyToManyField('Pros')
@@ -42,6 +44,7 @@ class Vacancy(models.Model):
     active = models.BooleanField()
     
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
+
 
     def __str__(self):
         return self.name
@@ -92,12 +95,17 @@ class Pros(models.Model):
 
 
 class Resume(models.Model):
+    # statusResume = [
+    #     ('')    
+    # ]
+    
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.PositiveIntegerField(blank=True, help_text='998901234567')
+    phone_number = PhoneNumberField(blank=True)
     file = models.FileField(help_text='Send your resume as a file')
     vacancy = models.ForeignKey(Vacancy, on_delete=models.SET_NULL, null=True)
     created_date = models.DateField(auto_now_add=True)
+    # status = models.CharField(blank=True)
 
     def __str__(self):
         return self.name
