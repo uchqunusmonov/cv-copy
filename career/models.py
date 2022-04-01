@@ -2,8 +2,8 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
-# from hitcount.models import HitCount
-# from hitcount.views import HitCountMixin
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCount
 
 
 class Career(models.Model):
@@ -41,7 +41,7 @@ class Vacancy(models.Model):
     skills = models.ManyToManyField('Skills')
     active = models.BooleanField()
     
-    # hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
 
     def __str__(self):
         return self.name
