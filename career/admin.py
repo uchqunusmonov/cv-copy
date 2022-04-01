@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 
+
 @admin.register(Career)
 class CareerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'image', 'job_ads', 'tel']
@@ -39,4 +40,4 @@ class ProsAdmin(admin.ModelAdmin):
 
 @admin.register(Resume)
 class CvAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'name', 'email', 'phone', 'file', 'vacancy']
+    display_fields = ['id', 'name', 'email', 'phone_number', 'file', 'vacancy']

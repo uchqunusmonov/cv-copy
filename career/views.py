@@ -15,7 +15,7 @@ def career(request):
     return render(request, 'career.html', context)
 
 
-def careerAdmin(request):
+def careerEdit(request):
     career = Career.objects.all().first()
     vacancies = Vacancy.objects.all()
     resumes = Resume.objects.all()
@@ -28,3 +28,9 @@ def careerAdmin(request):
     skillsForm = SkillsForm()
     requirementsForm = RequirementsForm()
     prosForm = ProsForm()
+    
+    context = {
+        'resumeForm': resumeForm,
+    }
+    
+    return render(request, 'header.html', context)

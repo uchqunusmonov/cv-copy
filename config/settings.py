@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # team 2
     'ckeditor',
     'hitcount',
+    'phonenumber_field',
 
 ]
 
