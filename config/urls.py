@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('about.urls')),
     path('', include('product.urls')),
     path('career/', include('career.urls')),
-    path('dashboard/', include('career.urls')),
+    path('adminpage/', include('adminPage.urls')),
 ]
 
 if settings.DEBUG:
