@@ -36,7 +36,7 @@
 
 </head>
 
-<body class="animsition">
+<body class="animsition" style="overflow: scroll;">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -62,7 +62,7 @@
 
                         {% comment %} Our Pages {% endcomment %}
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'admin-vacancy' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 About
                             </a>
@@ -83,7 +83,7 @@
                         </li>
 
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'admin-vacancy' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 Vacancy
                             </a>
@@ -244,7 +244,7 @@
                         </li>
 
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'admin-vacancy' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 Vacancy
                             </a>
@@ -366,7 +366,7 @@
 
 {% block content %}
 
-
+        
 {% endblock content %}
     <!-- Jquery JS-->
     <script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
@@ -393,7 +393,8 @@
     <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'sty.js' %}"></script>
 
-    </div></body>
+    </div>
+</body>
 
 </html>
 <!-- end document-->

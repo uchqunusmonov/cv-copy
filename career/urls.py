@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import career, careerEdit
+from .views import career
 
 urlpatterns = [
     path('', career, name='career'),
-    path('carAdmin/', careerEdit, name='career-edit'),
 ]
 

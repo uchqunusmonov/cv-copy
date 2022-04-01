@@ -5,6 +5,10 @@ from .views import *
 
 
 urlpatterns = [
-    path('', adminPanel, name='admin-panel'),
-    path('login/', user_login, name='login'),
+    path('', user_login, name='login'),
+    path('add-admin/', addAdmin, name='add-admin'),
+    path('logout/', user_logout, name='logout'),
+    path('profile/<str:username>/', profile, name='profile'),
+    path('vacancy/', admin_vacancy, name='admin-vacancy'),
+    path('<str:username>/', adminPanel, name='admin-panel'),
 ]

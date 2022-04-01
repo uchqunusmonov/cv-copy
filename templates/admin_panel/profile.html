@@ -1,0 +1,125 @@
+{% extends 'admin_panel/base_admin.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .career {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    input{
+        width: 70%;
+        padding: 8px 15px;
+        float: left;
+    }
+
+    textarea {
+        width: 70%;
+        padding: 8px 15px;
+    }
+
+    label {
+        color: white;
+    }
+    button {
+        float: right;
+    }
+
+    .header-wrap {
+        justify-content: end;
+    }
+    </style>
+        <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <div class="header-button">
+                            <div class="account-wrap" style="display: flex">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">john doe</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">john doe</a>
+                                                </h5>
+                                                <span class="email">johndoe@example.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="{% url 'profile' request.user.username %}"><i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item" style="border-top: 1px solid #f2f2f2;">
+                                                <a href="{% url 'add-admin' %}"><i class="zmdi zmdi-account-add"></i>Add admin</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="{% url 'logout' %}"><i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="login-content" style="height: 700px;">
+                                <div class="login-logo">
+                                    {% if user.photo %}
+                                        <img width="150" height="150" style="border-radius: 50%" src="{{ user.photo.url }}" alt="photo">
+                                    {% else %}
+                                        <p><i class="fa fa-user fa-5x" aria-hidden="true"></i></p>
+                                    {% endif %}
+                                    <h4 style="margin-top: 10px">{{ user.username }}</h4>
+                                    <h6 style="margin-top: 10px">{{ user.email }}</h6>
+                                    <p style="margin-top: 10px">{{ user.bio }}</p>
+                                </div>
+                                <div class="login-form">
+                                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        {% for form in editAdminForm %}
+                                            {% if form.name != 'password' %}
+                                                <div style="margin: 50px 0;">
+                                                    <p>{{ form.name }}</p>
+                                                    <p>{{ form }}</p>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                        <button class="au-btn au-btn--block au-btn--green m-b-20 m-t-50" type="submit">update</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
