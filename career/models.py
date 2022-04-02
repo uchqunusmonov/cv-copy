@@ -2,8 +2,8 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
-from django.contrib.contenttypes.fields import GenericRelation
-from hitcount.models import HitCount
+# from django.contrib.contenttypes.fields import GenericRelation
+# from hitcount.models import HitCount
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -26,31 +26,31 @@ class Career(models.Model):
 
 class Vacancy(models.Model):
     JOB_CHOICES = [
-        ('on', 'online'),
-        ('off', 'offline')
+        ('online', 'online'),
+        ('offline', 'offline')
     ]
     
     GRAPH = [
-        ('full', 'full time'),
-        ('part', 'part time')
+        ('full time', 'full time'),
+        ('part time', 'part time')
     ]
 
     name = models.CharField(max_length=100)
     description = RichTextField(max_length=500, blank=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     salary = models.PositiveIntegerField(help_text='enter the currency in dollars', default=0)
-    job_type = models.CharField(max_length=3, choices=JOB_CHOICES)
-    graph = models.CharField(max_length=4, choices=GRAPH, default='full time')
-    created_date = models.DateField(auto_now_add=True)
-    updated_date = models.DateField(auto_now=True)
+    job_type = models.CharField(max_length=10, choices=JOB_CHOICES)
+    graph = models.CharField(max_length=10, choices=GRAPH, default='full time')
     active_date = models.DateField(blank=True, null=True)
-    duties = models.ManyToManyField('Duties')
-    requirements = models.ManyToManyField('Requirements')
-    pros = models.ManyToManyField('Pros')
-    skills = models.ManyToManyField('Skills')
+    duties = models.ManyToManyField('Duties', blank=True)
+    requirements = models.ManyToManyField('Requirements', blank=True)
+    pros = models.ManyToManyField('Pros', blank=True)
+    skills = models.ManyToManyField('Skills', blank=True)
     active = models.BooleanField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
     
-    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
+    # hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
 
 
     def __str__(self):
@@ -62,13 +62,13 @@ class Vacancy(models.Model):
 
 
 class Duties(models.Model):
-    text = RichTextField()
+    dutie = RichTextField()
     created_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
-        return self.text
+        return self.dutie
 
     class Meta:
         verbose_name = 'Duty'
@@ -90,13 +90,13 @@ class Skills(models.Model):
 
 
 class Requirements(models.Model):
-    text = RichTextField()
+    requirement = RichTextField()
     created_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
-        return self.text
+        return self.requirement
 
     class Meta:
         verbose_name = 'Requirement'
@@ -104,14 +104,14 @@ class Requirements(models.Model):
 
 
 class Pros(models.Model):
-    text = RichTextField()
+    pros = RichTextField()
     created_date = models.DateField(auto_now_add=True)
     
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
-        return self.text
+        return self.pros
 
 
 class Resume(models.Model):

@@ -24,7 +24,7 @@ class ResumeForm(forms.ModelForm):
 class DutiesForm(forms.ModelForm):
     class Meta:
         model = Duties
-        fields = ['text', ]
+        fields = ['dutie', ]
 
 
 class SkillsForm(forms.ModelForm):
@@ -36,13 +36,13 @@ class SkillsForm(forms.ModelForm):
 class RequirementsForm(forms.ModelForm):
     class Meta:
         model = Requirements
-        fields = ['text', ]
+        fields = ['requirement', ]
 
 
 class ProsForm(forms.ModelForm):
     class Meta:
         model = Pros
-        fields = ['text', ]
+        fields = ['pros', ]
 
 
 class VacancyForm(forms.ModelForm):
