@@ -24,43 +24,6 @@ class Career(models.Model):
         return self.name
 
 
-class Vacancy(models.Model):
-    JOB_CHOICES = [
-        ('online', 'online'),
-        ('offline', 'offline')
-    ]
-    
-    GRAPH = [
-        ('full time', 'full time'),
-        ('part time', 'part time')
-    ]
-
-    name = models.CharField(max_length=100)
-    description = RichTextField(max_length=500, blank=True)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    salary = models.PositiveIntegerField(help_text='enter the currency in dollars', default=0)
-    job_type = models.CharField(max_length=10, choices=JOB_CHOICES)
-    graph = models.CharField(max_length=10, choices=GRAPH, default='full time')
-    active_date = models.DateField(blank=True, null=True)
-    duties = models.ManyToManyField('Duties', blank=True)
-    requirements = models.ManyToManyField('Requirements', blank=True)
-    pros = models.ManyToManyField('Pros', blank=True)
-    skills = models.ManyToManyField('Skills', blank=True)
-    active = models.BooleanField()
-    created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)
-    
-    # hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
-
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Vacancy'
-        verbose_name_plural = 'Vacancies'
-
-
 class Duties(models.Model):
     dutie = RichTextField()
     created_date = models.DateField(auto_now_add=True)
@@ -112,13 +75,48 @@ class Pros(models.Model):
 
     def __str__(self):
         return self.pros
+    
+
+class Vacancy(models.Model):
+    JOB_CHOICES = [
+        ('online', 'online'),
+        ('offline', 'offline')
+    ]
+    
+    GRAPH = [
+        ('full time', 'full time'),
+        ('part time', 'part time')
+    ]
+
+    name = models.CharField(max_length=100)
+    description = RichTextField(max_length=500, blank=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    salary = models.PositiveIntegerField(help_text='enter the currency in dollars', default=0)
+    job_type = models.CharField(max_length=10, choices=JOB_CHOICES)
+    graph = models.CharField(max_length=10, choices=GRAPH, default='full time')
+    active_date = models.DateField(blank=True, null=True)
+    duties = models.ManyToManyField(Duties, blank=True)
+    requirements = models.ManyToManyField(Requirements, blank=True)
+    pros = models.ManyToManyField(Pros, blank=True)
+    skills = models.ManyToManyField(Skills, blank=True)
+    active = models.BooleanField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Vacancy'
+        verbose_name_plural = 'Vacancies'
 
 
 class Resume(models.Model):
     # statusResume = [
     #     ('')    
     # ]
-    
+
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = PhoneNumberField(blank=True)

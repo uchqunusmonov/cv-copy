@@ -9,6 +9,7 @@ from career.models import *
 
 def adminPanel(request, username):
     if request.user.username != username:
+        return redirect()
         print('//////////////////////////////////////////////////////////////////////////')
     
     try:
@@ -53,7 +54,7 @@ def user_login(request):
 def admin_vacancy(request):
     vacancies = Vacancy.objects.all().order_by('-updated_date')
     user = request.user
-    careerInfo = Career.objects.all().first()
+    careerInfo = Career.objects.first()
     
     careerForm = CareerForm(instance=careerInfo)
 
@@ -87,6 +88,7 @@ def admin_vacancy(request):
         
         if vacancyForm.is_valid():
             obj = vacancyForm.save(commit=False)
+            print(obj, '/////////////////////////////////////')
             obj.author = user
             obj.save()
             

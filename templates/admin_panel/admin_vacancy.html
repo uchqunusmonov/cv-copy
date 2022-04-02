@@ -382,10 +382,11 @@
                                                 <label for="skills"></label>
                                                 <input id="skills" type="text" placeholder="Skills" name="skills">
                                             </div> {% endcomment %}
-                                            {% for form in vacancyForm %}
-                                            <p style="margin-top: 50px; color: white">{{ form.name }}</p>
-                                            <p>{{ form }}</p>
-                                            {% endfor %}
+                                            {% comment %} {% for form in vacancyForm %}
+                                                <p style="margin-top: 50px; color: white">{{ form.name }}</p>
+                                                <p>{{ form }}</p>
+                                            {% endfor %} {% endcomment %}
+                                            {{ vacancyForm.as_p }}
                                             <button class="btn btn-info button1">Create</button>
                                         </form>
                                     </div>
