@@ -37,6 +37,13 @@
 </head>
 
 <body class="animsition" style="overflow: scroll;">
+    <style>
+        .layerbegzod {
+         overflow: scroll; /* Добавляем полосы прокрутки */
+         width: 100%; /* Ширина блока */
+         height: 65%; /* Высота блока */
+        }
+    </style>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -90,7 +97,7 @@
                         </li>
 
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'admin_product' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 Product
                             </a>
@@ -251,7 +258,7 @@
                         </li>
 
                         <li>
-                            <a href="chart.html">
+                            <a href="{% url 'admin_product' %}">
                                 <i class="fas fa-chart-bar"></i>
                                 Product
                             </a>
