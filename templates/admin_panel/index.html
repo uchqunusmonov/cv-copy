@@ -1,5 +1,122 @@
 {% extends 'admin_panel/base_admin.html' %}
 {% load static %}
+{% block mobile_navigation %}
+<nav class="navbar-mobile">
+    <div class="container-fluid">
+        <ul class="navbar-mobile__list list-unstyled">
+
+
+
+            {% comment %} Our Pages {% endcomment %}
+            <li>
+                <a href="{% url 'admin-vacancy' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Brend
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'admin-vacancy' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    Vacancy
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'admin_product' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    Product
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Contact
+                </a>
+            </li>
+            <li class="has-sub">
+                <a class="js-arrow" href="{% url 'admin-panel' request.user.username %}">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Admin Panel
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock mobile_navigation %}
+
+
+
+
+{% block navigation %}
+<nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar__list">
+        {% comment %} Our Pages {% endcomment %}
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'blogform' %}">
+                <i class="fas fa-chart-bar"></i>
+                Blog
+            </a>
+        </li>
+
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                Brend
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'admin-vacancy' %}">
+                <i class="fas fa-chart-bar"></i>
+                Vacancy
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'admin_product' %}">
+                <i class="fas fa-chart-bar"></i>
+                Product
+            </a>
+        </li>
+
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                Contact
+            </a>
+        </li>
+
+        
+        <li class="active has-sub">
+            <a class="js-arrow" href="{% url 'admin-panel' request.user.username %}">
+                <i class="fas fa-tachometer-alt"></i>Admin Panel</a>
+        </li>
+    </ul>
+</nav>
+{% endblock navigation %}
 {% block content %}
         <style>
             .header-wrap {
