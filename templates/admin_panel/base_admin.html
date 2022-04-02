@@ -33,8 +33,14 @@
 
     <!-- Main CSS-->
     <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
+    <style>
+        .header-wrap {
+            justify-content: end;
+        }
+    </style>
 
 </head>
+
 
 <body class="animsition" style="overflow: scroll;">
     <style>
@@ -61,6 +67,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
@@ -215,6 +222,11 @@
                     </ul>
                 </div>
             </nav>
+=======
+            {% block mobile_navigation %}
+                
+            {% endblock mobile_navigation %}
+>>>>>>> 5fbfb9a08ffbd0b89d7ad06bd7de1587771e3fae
         </header>
         <!-- END HEADER MOBILE-->
 
@@ -226,6 +238,7 @@
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
+<<<<<<< HEAD
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         {% comment %} Our Pages {% endcomment %}
@@ -366,15 +379,20 @@
                         </li>
                     </ul>
                 </nav>
+=======
+                {% block navigation %}
+                
+                {% endblock navigation %}
+>>>>>>> 5fbfb9a08ffbd0b89d7ad06bd7de1587771e3fae
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->
 
 
-{% block content %}
+    {% block content %}
 
-        
-{% endblock content %}
+            
+    {% endblock content %}
     <!-- Jquery JS-->
     <script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
     <!-- Bootstrap JS-->

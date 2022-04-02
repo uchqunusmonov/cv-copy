@@ -15,7 +15,10 @@ class Career(models.Model):
     background = models.ImageField(upload_to='Career/images/')
     job_ads = models.TextField(verbose_name='Job advertisement title')
     tel = models.CharField(max_length=100)
+    created_date = models.DateField(auto_now_add=True)
+    updated_date = models.DateField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    
     
     def __str__(self):
         return self.name
@@ -60,6 +63,7 @@ class Vacancy(models.Model):
 
 class Duties(models.Model):
     text = RichTextField()
+    created_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
@@ -73,6 +77,7 @@ class Duties(models.Model):
 
 class Skills(models.Model):
     name = models.CharField(max_length=300)
+    created_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
@@ -86,6 +91,7 @@ class Skills(models.Model):
 
 class Requirements(models.Model):
     text = RichTextField()
+    created_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
@@ -99,6 +105,8 @@ class Requirements(models.Model):
 
 class Pros(models.Model):
     text = RichTextField()
+    created_date = models.DateField(auto_now_add=True)
+    
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 
