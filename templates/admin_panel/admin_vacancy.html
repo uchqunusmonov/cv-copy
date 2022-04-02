@@ -1,5 +1,276 @@
 {% extends 'admin_panel/base_admin.html' %}
 {% load static %}
+
+{% block mobile_navigation %}
+    <nav class="navbar-mobile">
+        <div class="container-fluid">
+            <ul class="navbar-mobile__list list-unstyled">
+                {% comment %} Our Pages {% endcomment %}
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Blog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Brend
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" style="color: #4272d7;">
+                        <i class="fas fa-chart-bar"></i>
+                        Vacancy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Product
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Contact
+                    </a>
+                </li>
+
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                        <li>
+                            <a href="index.html">Dashboard 1</a>
+                        </li>
+                        <li>
+                            <a href="index2.html">Dashboard 2</a>
+                        </li>
+                        <li>
+                            <a href="index3.html">Dashboard 3</a>
+                        </li>
+                        <li>
+                            <a href="index4.html">Dashboard 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>Charts</a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="fas fa-table"></i>Tables</a>
+                </li>
+                <li>
+                    <a href="form.html">
+                        <i class="far fa-check-square"></i>Forms</a>
+                </li>
+                <li>
+                    <a href="calendar.html">
+                        <i class="fas fa-calendar-alt"></i>Calendar</a>
+                </li>
+                <li>
+                    <a href="map.html">
+                        <i class="fas fa-map-marker-alt"></i>Maps</a>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Pages</a>
+                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                        <li>
+                            <a href="login.html">Login</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li>
+                            <a href="forget-pass.html">Forget Password</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>UI Elements</a>
+                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                        <li>
+                            <a href="button.html">Button</a>
+                        </li>
+                        <li>
+                            <a href="badge.html">Badges</a>
+                        </li>
+                        <li>
+                            <a href="tab.html">Tabs</a>
+                        </li>
+                        <li>
+                            <a href="card.html">Cards</a>
+                        </li>
+                        <li>
+                            <a href="alert.html">Alerts</a>
+                        </li>
+                        <li>
+                            <a href="progress-bar.html">Progress Bars</a>
+                        </li>
+                        <li>
+                            <a href="modal.html">Modals</a>
+                        </li>
+                        <li>
+                            <a href="switch.html">Switchs</a>
+                        </li>
+                        <li>
+                            <a href="grid.html">Grids</a>
+                        </li>
+                        <li>
+                            <a href="fontawesome.html">Fontawesome Icon</a>
+                        </li>
+                        <li>
+                            <a href="typo.html">Typography</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock mobile_navigation %}
+
+{% block navigation %}
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar__list">
+            {% comment %} Our Pages {% endcomment %}
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'blogform' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Brend
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'admin-vacancy' %}" style="color: #4272d7;">
+                    <i class="fas fa-chart-bar"></i>
+                    Vacancy
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Product
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Contact
+                </a>
+            </li>
+            
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>Charts</a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <i class="fas fa-table"></i>Tables</a>
+            </li>
+            <li>
+                <a href="form.html">
+                    <i class="far fa-check-square"></i>Forms</a>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <i class="fas fa-calendar-alt"></i>Calendar</a>
+            </li>
+            <li>
+                <a href="map.html">
+                    <i class="fas fa-map-marker-alt"></i>Maps</a>
+            </li>
+            <li class="has-sub">
+                <a class="js-arrow" href="#">
+                    <i class="fas fa-copy"></i>Pages</a>
+                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li>
+                        <a href="forget-pass.html">Forget Password</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a class="js-arrow" href="#">
+                    <i class="fas fa-desktop"></i>UI ffkskfkaskjhdfkj</a>
+                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                    <li>
+                        <a href="button.html">Button</a>
+                    </li>
+                    <li>
+                        <a href="badge.html">Badges</a>
+                    </li>
+                    <li>
+                        <a href="tab.html">Tabs</a>
+                    </li>
+                    <li>
+                        <a href="card.html">Cards</a>
+                    </li>
+                    <li>
+                        <a href="alert.html">Alerts</a>
+                    </li>
+                    <li>
+                        <a href="progress-bar.html">Progress Bars</a>
+                    </li>
+                    <li>
+                        <a href="modal.html">Modals</a>
+                    </li>
+                    <li>
+                        <a href="switch.html">Switchs</a>
+                    </li>
+                    <li>
+                        <a href="grid.html">Grids</a>
+                    </li>
+                    <li>
+                        <a href="fontawesome.html">Fontawesome Icon</a>
+                    </li>
+                    <li>
+                        <a href="typo.html">Typography</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+{% endblock navigation %}
+
 {% block content %}
     <style>
         .career {
@@ -26,9 +297,8 @@
     button {
         float: right;
     }
+    .btn-primary:hover {
 
-    .header-wrap {
-        justify-content: end;
     }
     </style>
         <!-- PAGE CONTAINER-->
@@ -54,7 +324,7 @@
                                                     <p>{{ form }}</p>
                                                 </div>
                                             {% endfor %}
-                                            <button class="btn btn-info button2">Edit</button>
+                                            <button class="btn btn-info button2">Update</button>
                                         </form>
                                     </div>
                                 </div>
@@ -68,7 +338,7 @@
                                 <div class="au-card-inner">
                                     <div class="table-responsive">
                                         <form class="form form-top-countries" method="post" enctype="multipart/form-data">{% csrf_token %}
-                                            <div class="career">
+                                            {% comment %} <div class="career">
                                                 <label for="last_name">Name:</label>
                                                 <input id="last_name" type="name" placeholder="Name" name="name">
                                             </div>
@@ -111,8 +381,12 @@
                                             <div class="career">
                                                 <label for="skills"></label>
                                                 <input id="skills" type="text" placeholder="Skills" name="skills">
-                                            </div>
-                                            <button type="button" class="btn btn-info button1">Add</button>
+                                            </div> {% endcomment %}
+                                            {% for form in vacancyForm %}
+                                            <p style="margin-top: 50px; color: white">{{ form.name }}</p>
+                                            <p>{{ form }}</p>
+                                            {% endfor %}
+                                            <button class="btn btn-info button1">Create</button>
                                         </form>
                                     </div>
                                 </div>
@@ -125,10 +399,9 @@
                                     <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                         <div class="au-card-inner">
                                             <div class="table-responsive">
-                                                <form class="form form-top-countries">
-                                                    <input type="text" placeholder="Name" name="name">
-                                                    <button type="button" class="btn btn-info button2">Add</button>
-                                                    
+                                                <form class="form form-top-countries" method="post">{% csrf_token %}
+                                                    {{ dutiesForm }}
+                                                    <button class="btn btn-info button2">Create</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -139,10 +412,9 @@
                                     <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                         <div class="au-card-inner">
                                             <div class="table-responsive">
-                                                <form class="form form-top-countries">
-                                                    <input type="text" placeholder="Pros" name="pros">
-                                                    <button type="button" class="btn btn-info button2">Add</button>
-                                                    
+                                                <form class="form form-top-countries" method="post">{% csrf_token %}
+                                                    {{ prosForm }}
+                                                    <button class="btn btn-info button2">Create</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -153,10 +425,9 @@
                                     <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                         <div class="au-card-inner">
                                             <div class="table-responsive">
-                                                <form class="form form-top-countries">
-                                                    <input type="text" placeholder="Skills" name="skills">
-                                                    <button type="button" class="btn btn-info button2">Add</button>
-                                                    
+                                                <form class="form form-top-countries" method="post">{% csrf_token %}
+                                                    {{ skillsForm }}
+                                                    <button class="btn btn-info button2">Create</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -167,10 +438,9 @@
                                     <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                         <div class="au-card-inner">
                                             <div class="table-responsive">
-                                                <form class="form form-top-countries">
-                                                    <input type="text" placeholder="Requirements" name="requirements">
-                                                    <button type="button" class="btn btn-info button2">Add</button>
-                                                    
+                                                <form class="form form-top-countries" method="post">{% csrf_token %}
+                                                    {{ requirementsForm }}
+                                                    <button class="btn btn-info button2">Create</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -181,41 +451,135 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2 class="title-1 m-b-25">VACANCIES</h2>
-                            <div class="table-responsive table--no-card m-b-40">
-                                <table class="table table-borderless table-striped table-earning">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Jobtype</th>
-                                            <th>Graph</th>
-                                            <th class="text-right">Salary</th>
-                                            <th>Create1</th>
-                                            <th>Update</th>
-                                            <th class="date">active_date</th>
-                                            <th>Active</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>100397</td>
-                                            <td>Samsung S8 Black</td>
-                                            <td class="text-right">$756.00</td>
-                                            <td class="text-right">1</td>
-                                            <td class="text-right">$756.00</td>
-                                            <td>100398</td>
-                                            <td>iPhone X 64Gb Grey</td>
-                                            <td class="text-right">$999.00</td>
-                                            <td class="text-right"><button type="button" class="btn btn-primary">Edit</button></td>
-                                            <td class="text-right"><button type="button" class="btn btn-danger">deleted</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            {% if vacancies %}
+                                <h2 class="title-1 m-b-25">VACANCIES</h2>
+                                <div class="table-responsive table--no-card m-b-40">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Jobtype</th>
+                                                <th>Graph</th>
+                                                <th class="text-right">Salary</th>
+                                                <th>created date</th>
+                                                <th>updated date</th>
+                                                <th>active date</th>
+                                                <th>author</th>
+                                                <th>active</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for obj in vacancies %}
+                                                <tr style="border-top: 1px solid #ccc">
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td>{{ obj.name }}</td>
+                                                    <td>{{ obj.job_type }}</td>
+                                                    <td>{{ obj.graph }}</td>
+                                                    <td class="text-right">${{ obj.salary }}</td>
+                                                    {% comment %} <td>
+                                                        {% if obj.pros.all %}
+                                                            {% for obj in obj.pros.all %}
+                                                                <p>{{ obj }}</p>
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            <p>-</p>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {% if obj.skills.all %}
+                                                            {% for obj in obj.skills.all %}
+                                                                <p>{{ obj }}</p>
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            <p>-</p>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {% if obj.requirements.all %}
+                                                            {% for obj in obj.requirements.all %}
+                                                                <p>{{ obj }}</p>
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            <p>-</p>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {% if obj.duties.all %}
+                                                            {% for obj in obj.duties.all %}
+                                                                <p>{{ obj }}</p>
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            <p>-</p>
+                                                        {% endif %}
+                                                    </td> {% endcomment %}
+                                                    <td>{{ obj.created_date }}</td>
+                                                    <td>{{ obj.updated_date }}</td>
+                                                    <td>
+                                                        {% if obj.active_date %}
+                                                            <p>{{ obj.active_date }}</p>
+                                                        {% else %}
+                                                            <p>not specified</p>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>{{ obj.author }}</td>
+                                                    <td>{{ obj.active }}</td>
+                                                    <td style="padding: 12px 40px;" class="text-right">
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scrollmodal">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                    <td style="padding: 12px 40px;" class="text-right">
+                                                        <button type="button" class="btn btn-danger">
+                                                            <a href="{% url 'delete-vacancy' obj.id %}" style="color: inherit">delete</a>
+                                                        </button>
+                                                    </td>
+                                                    {% comment %} Modal======================== {% endcomment %}
+                                                </tr>
+                                                <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="scrollmodalLabel">Scrolling Long Content Modal</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>
+                                                                    <br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                                                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                                                                    <br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
+                                                                    leo risus, porta ac consectetur ac, vestibulum at eros.
+                                                                    <br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
+                                                                    faucibus dolor auctor.
+                                                                    <br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                                                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                                                                    <br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
+                                                                    leo risus, porta ac consectetur ac, vestibulum at eros.
+                                                                    <br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
+                                                                    faucibus dolor auctor.
+                                                                    <br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                                                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                <button type="button" class="btn btn-primary">Confirm</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <h2 class="title-1 m-b-25">No VACANCIES</h2>
+                                <hr>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
@@ -261,6 +625,8 @@
             </div>
         </div>
     </div>
+
+    
 
 
 {% endblock content %}
