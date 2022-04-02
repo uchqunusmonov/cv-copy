@@ -275,7 +275,7 @@
     <meta name="msapplication-TileImage"
         content="{% static 'wp-content/uploads/2021/08/cropped-fav-270x270.png' %}">
     <script type="text/javascript">function setREVStartSize(e) {
-            //window.requestAnimationFrame(function() {
+            //window.requestAnimationFrame(function() {				 
             window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
             window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
             try {
@@ -358,11 +358,19 @@
                                                 <a href="#" class="theme-header-font">Services</a>
                                             </div>
                                         </div>
+                                        <div class="elementor-element elementor-element-f1e4c6a hover_links elementor-widget__width-auto elementor-widget elementor-widget-text-editor"
+                                            data-id="f1e4c6a" data-element_type="widget"
+                                            data-widget_type="text-editor.default">
+                                            <div class="elementor-widget-container">
+                                                <a href="#" class="theme-header-font">News &amp;
+                                                    Media</a>
+                                            </div>
+                                        </div>
                                         <div class="elementor-element elementor-element-3036055 hover_links elementor-widget__width-auto elementor-widget elementor-widget-text-editor"
                                             data-id="3036055" data-element_type="widget"
                                             data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
-                                                <a href="{% url 'career' %}" class="theme-header-font">Careers</a>
+                                                <a href="#" class="theme-header-font">Carrers</a>
                                             </div>
                                         </div>
                                         <div class="elementor-element elementor-element-34cdc97 elementor-widget__width-auto elementor-widget elementor-widget-wgl-button"
@@ -420,7 +428,7 @@
                                                         </li>
                                                         <li id="menu-item-2684"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-2684">
-                                                            <a href="{% url 'blog' %}"><span><span
+                                                            <a href="#"><span><span
                                                                         class="item_text">Blog</span></span></a>
                                                             </li>
                                                         <li id="menu-item-3129"
@@ -428,6 +436,11 @@
                                                             <a href="{% url 'brand' %}"><span><span
                                                                         class="item_text">Product</span></span></a>
                                                              </li>
+                                                        <li id="menu-item-5082"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-5082">
+                                                            <a href="#"><span><span
+                                                                        class="item_text">Carrers</span></span></a>
+                                                        </li>
                                                         <li id="menu-item-766"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766">
                                                             <a href="#"><span><span
@@ -493,7 +506,7 @@
                                                         <li
                                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
                                                             <a href="{% url 'about' %}"><span><span
-                                                                        class="item_text">About Us</span></span><i
+                                                                        class="item_text">About us</span></span><i
                                                                     class="menu-item__plus"></i></a>
                                                             <ul class='sub-menu wgl-submenu-position-default'>
                                                                 <li
@@ -508,7 +521,7 @@
                                                                                 class="item_text">Our
                                                                                 Team</span></span><i
                                                                             class="menu-item__plus"></i></a></li>
-
+                                                          
                                                             </ul>
                                                         </li>
                                                         <li
@@ -516,21 +529,21 @@
                                                             <a href="#"><span><span
                                                                         class="item_text">Blog</span></span><i
                                                                     class="menu-item__plus"></i></a>
-
+                                                            
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3129">
                                                             <a href="{% url 'brand' %}"><span><span
                                                                         class="item_text">Product</span></span><i
                                                                     class="menu-item__plus"></i></a>
-
+                                                            
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-5082">
-                                                            <a href="{% url 'career' %}"><span><span
-                                                                        class="item_text">Careers</span></span><i
+                                                            <a href="#"><span><span
+                                                                        class="item_text">Carrers</span></span><i
                                                                     class="menu-item__plus"></i></a>
-
+                                                            
                                                         </li>
                                                         <li
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766">
@@ -548,7 +561,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                      
                             </div>
                         </section>
                     </div>
@@ -572,7 +585,7 @@
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
-                                                <a href="{% url 'about' %}"><span><span class="item_text">About Us</span></span><i
+                                                <a href="{% url 'about' %}"><span><span class="item_text">About us</span></span><i
                                                         class="menu-item__plus"></i></a>
                                                 <ul class='sub-menu wgl-submenu-position-default'>
                                                     <li
@@ -585,29 +598,29 @@
                                                         <a href="{% url 'our-team' %}"><span><span class="item_text">Our
                                                                     Team</span></span><i
                                                                 class="menu-item__plus"></i></a></li>
-
+                                                    
                                                 </ul>
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684">
-                                                <a href="{% url 'blog' %}"><span><span
+                                                <a href="#"><span><span
                                                             class="item_text">Blog</span></span><i
                                                         class="menu-item__plus"></i></a>
-
+                                                
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3129">
                                                 <a href="{% url 'brand' %}"><span><span
                                                             class="item_text">Product</span></span><i
                                                         class="menu-item__plus"></i></a>
-
+                                                
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5082">
-                                                <a href="{% url 'career' %}"><span><span
-                                                            class="item_text">Careers</span></span><i
+                                                <a href="#"><span><span
+                                                            class="item_text">Carrers</span></span><i
                                                         class="menu-item__plus"></i></a>
-
+                                                
                                             </li>
                                             <li
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766">
@@ -629,7 +642,7 @@
                                 </div>
                             </div>
 
-
+                       
                         </div>
                     </div>
                 </div>
@@ -656,7 +669,7 @@
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316">
-                                            <a href="{% url 'about' %}"><span><span class="item_text">About Us</span></span><i
+                                            <a href="{% url 'about' %}"><span><span class="item_text">About us</span></span><i
                                                     class="menu-item__plus"></i></a>
                                             <ul class='sub-menu wgl-submenu-position-default'>
                                                 <li
@@ -668,12 +681,12 @@
                                                     <a href="{% url 'our-team' %}"><span><span class="item_text">Our
                                                                 Team</span></span><i class="menu-item__plus"></i></a>
                                                 </li>
-
+                                                
                                             </ul>
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684">
-                                            <a href="{% url 'blog' %}"><span><span
+                                            <a href="#"><span><span
                                                         class="item_text">Blog</span></span><i
                                                     class="menu-item__plus"></i></a>
                                         </li>
@@ -682,13 +695,13 @@
                                             <a href="{% url 'brand' %}"><span><span
                                                         class="item_text">Product</span></span><i
                                                     class="menu-item__plus"></i></a>
-
+                                            
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-5082">
-                                            <a href="{% url 'career' %}"><span><span class="item_text">Careers</span></span><i
+                                            <a href="#"><span><span class="item_text">Carrers</span></span><i
                                                     class="menu-item__plus"></i></a>
-
+                                            
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766">
@@ -742,7 +755,7 @@
                                                                             width="1920" height="800"
                                                                             data-bg="p:left center;" data-parallax="off"
                                                                             class="rev-slidebg" data-no-retina="">
-
+                                                                        
 
                                                                         <rs-layer id="slider-1-slide-1-layer-9"
                                                                             data-type="text" data-rsp_ch="on"
@@ -756,7 +769,7 @@
                                                                             Flexible Logistics <br>
                                                                             & Cargo for Business
                                                                         </rs-layer>
-
+                                                                        
 
                                                                         <rs-layer id="slider-1-slide-1-layer-10"
                                                                             data-type="text"
@@ -2818,7 +2831,7 @@
                                                 data-widget_type="wgl-header-logo.default">
                                                 <div class="elementor-widget-container">
                                                     <div class="wgl-logotype-container default_logo"><a
-                                                            href="index.htm"><img class="default_logo"
+                                                            href="{% url 'home' %}"><img class="default_logo"
                                                                 src="{% static 'wp-content/uploads/2021/06/logo1.png' %}"
                                                                 alt="logotype" style="height: 43px;"></a></div>
                                                 </div>

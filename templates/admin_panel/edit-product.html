@@ -1,0 +1,180 @@
+{% extends 'admin_panel/base_admin.html' %}
+{% load static %}
+
+
+{% block mobile_navigation %}
+<nav class="navbar-mobile">
+    <div class="container-fluid">
+        <ul class="navbar-mobile__list list-unstyled">
+
+
+
+            {% comment %} Our Pages {% endcomment %}
+            <li>
+                <a href="{% url 'admin-vacancy' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Brend
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'admin-vacancy' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    Vacancy
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'admin_product' %}">
+                    <i class="fas fa-chart-bar"></i>
+                    Product
+                </a>
+            </li>
+
+            <li>
+                <a href="chart.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Contact
+                </a>
+            </li>
+            <li class="has-sub">
+                <a class="js-arrow" href="{% url 'admin-panel' request.user.username %}">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Admin Panel
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock mobile_navigation %}
+
+
+
+
+{% block navigation %}
+<nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar__list">
+        {% comment %} Our Pages {% endcomment %}
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'blogform' %}">
+                <i class="fas fa-chart-bar"></i>
+                Blog
+            </a>
+        </li>
+
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                Brend
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'admin-vacancy' %}">
+                <i class="fas fa-chart-bar"></i>
+                Vacancy
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'admin_product' %}">
+                <i class="fas fa-chart-bar"></i>
+                Product
+            </a>
+        </li>
+
+        <li>
+            <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>
+                Contact
+            </a>
+        </li>
+
+        
+        <li class="has-sub">
+            <a class="js-arrow" href="{% url 'admin-panel' request.user.username %}">
+                <i class="fas fa-tachometer-alt"></i>Admin Panel</a>
+        </li>
+    </ul>
+</nav>
+{% endblock navigation %}
+{% block content %}
+    <div class="page-wrapper">
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+                    <!-- HEADER DESKTOP-->
+                    {% include 'admin_panel/admin_header.html' %}
+                    <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <form method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                                    <h2 class="title-1 m-b-25">Edit Product</h2>
+                                    <div class="table-responsive table--no-card m-b-40 layerbegzod">
+                                        <table class="table table-borderless table-striped table-earning">
+                                            <thead>
+                                                <tr>
+                                                    <th>title</th>
+                                                    <th>image</th>
+                                                    <th>brand</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{ product_form.title }}</td>
+                                                    <td>{{ product_form.image }}</td>
+                                                    <td class="text-right">{{ product_form.brand }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        {{ product_form.media }}
+                                        {{ product_form.text }}
+                                    </div>
+                                    <button class="au-btn au-btn-icon au-btn--green">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+        </div>
+        <!-- END PAGE CONTAINER-->
+
+    </div>
+{% endblock content %}

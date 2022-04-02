@@ -1,6 +1,30 @@
 ﻿{% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<head>
+    <style id='elementor-frontend-inline-css' type='text/css'>
+        @font-face {
+            font-family: eicons;
+            src: url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot);
+            src: url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot) format("embedded-opentype"), url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2) format("woff2"), url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff) format("woff"), url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf) format("truetype"), url(../wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg) format("svg");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        .elementor-container>.elementor-row>.elementor-column>.elementor-element-populated,
+        .elementor-container>.elementor-column>.elementor-element-populated {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated,
+        .elementor-column-gap-default>.elementor-column>.theiaStickySidebar>.elementor-element-populated,
+        .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
+</head>
 
 <body
     class="page-template-default page page-id-2143 theme-transmax woocommerce-no-js elementor-default elementor-kit-7 elementor-page elementor-page-2143">

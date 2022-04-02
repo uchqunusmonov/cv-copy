@@ -11,7 +11,7 @@ urlpatterns = [
     path('', include('about.urls')),
     path('', include('product.urls')),
     path('career/', include('career.urls')),
-    path('adminpage/', include('adminPage.urls')),
+    path('admin-panel/', include('adminPage.urls')),
 ]
 
 if settings.DEBUG:

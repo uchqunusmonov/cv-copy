@@ -6,6 +6,8 @@ from django.contrib.auth.forms import authenticate
 from .forms import *
 from career.forms import *
 from career.models import *
+from product.models import *
+from product.forms import *
 
 def adminPanel(request, username):
     if request.user.username != username:
@@ -157,3 +159,64 @@ def profile(request, username):
     }
     
     return render(request, 'admin_panel/profile.html', context)
+
+def editbrand(request, slug):
+    brand =Brand.objects.get(slug=slug)
+    brand_form = BrandForm(request.POST or None, request.FILES or None, instance=brand)
+
+    if request.method == 'POST':
+        brand_form = BrandForm(request.POST, request.FILES, instance=brand)
+
+        if brand_form.is_valid():
+            brand_form.save()
+            return redirect('home', slug=slug)
+
+    context = {
+        'brand':brand,
+        'brand_form':brand_form,
+    }
+    return render(request, 'admin_panel/chart.html', context)
+
+def editproduct(request, slug):
+    product = Products.objects.get(slug=slug)
+    product_form = ProductForm(request.POST or None, request.FILES or None, instance=product)
+
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST , request.FILES, instance=product)
+
+        if product_form.is_valid():
+            product_form.save()
+            return redirect('home')
+
+
+    context = {
+        'product':product,
+        'product_form':product_form,
+    }
+    return render(request, 'admin_panel/edit-product.html', context)
+
+def admin_product(request):
+    product = Products.objects.all().order_by('-id')
+
+    context = {
+        'product':product,
+    }
+    
+    return render(request, 'admin_panel/admin-product.html', context)
+
+def add_product(request):
+    product_form = ProductForm()
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, request.FILES)
+        if product_form.is_valid():
+            product_form.save()
+            return redirect('home')
+    context ={
+        'product_form':product_form,
+    }
+    return render(request, 'admin_panel/add-product.html', context)
+
+def delete_product(request, pk):
+    product = Products.objects.get(id=pk)
+    product.delete()
+    return redirect('admin_product')

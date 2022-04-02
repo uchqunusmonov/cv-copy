@@ -43,6 +43,13 @@
 
 
 <body class="animsition" style="overflow: scroll;">
+    <style>
+        .layerbegzod {
+         overflow: scroll; /* Добавляем полосы прокрутки */
+         width: 100%; /* Ширина блока */
+         height: 65%; /* Высота блока */
+        }
+    </style>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -60,16 +67,18 @@
                     </div>
                 </div>
             </div>
+
             {% block mobile_navigation %}
                 
             {% endblock mobile_navigation %}
+
         </header>
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="{% url 'admin-panel' request.user.username %}">
                     <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin" />
                 </a>
             </div>
