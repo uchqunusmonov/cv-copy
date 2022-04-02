@@ -10,50 +10,20 @@ from product.models import *
 from product.forms import *
 
 def adminPanel(request, username):
+    if request.user.username != username:
+        print('//////////////////////////////////////////////////////////////////////////')
     
     try:
-        user = User.objects.get(username=request.user.username)
+        user = User.objects.get(username=username)
     except:
         return redirect('login')
         
     
     context = {
-        'admin': user 
+        'admin': user
     }
     
     return render(request, 'admin_panel/index.html', context)    
-
-
-def admin_vacancy(request):
-    user = request.user
-    careerInfo = Career.objects.all().first()
-    
-    vacancyForm = VacancyForm()
-    careerForm = CareerForm(instance=careerInfo)
-    
-    if request.POST:
-        careerForm = CareerForm(request.POST or None, request.FILES or None, instance=careerInfo)
-        vacancyForm = VacancyForm(request.POST, request.FILES)
-
-        if careerForm.is_valid():
-            obj = careerForm.save(commit=False)
-            obj.save()
-            
-            return redirect('admin-vacancy')
-        
-        if vacancyForm.is_valid():
-            obj = vacancyForm.save(commit=False)
-            obj.save()
-            
-            return redirect('admin-vacancy')
-            
-    
-    context = {
-        'user': user,
-        'careerForm': careerForm,
-        'vacancyForm': vacancyForm,
-    }
-    return render(request, 'admin_panel/admin_vacancy.html', context)
 
 
 def user_login(request):
@@ -79,6 +49,110 @@ def user_login(request):
     }
     
     return render(request, 'admin_panel/login.html', context)    
+
+
+
+def admin_vacancy(request):
+    vacancies = Vacancy.objects.all().order_by('-updated_date')
+    user = request.user
+    careerInfo = Career.objects.all().first()
+    
+    careerForm = CareerForm(instance=careerInfo)
+
+    vacancyForm = VacancyForm()
+    dutiesForm = DutiesForm()
+    skillsForm = SkillsForm()
+    requirementsForm = RequirementsForm()
+    prosForm = ProsForm()
+
+    
+    if request.POST:
+        careerForm = CareerForm(request.POST or None, request.FILES or None, instance=careerInfo)
+
+        vacancyForm = VacancyForm(request.POST, request.FILES)
+        dutiesForm = DutiesForm(request.POST)
+        skillsForm = SkillsForm(request.POST)
+        requirementsForm = RequirementsForm(request.POST)
+        prosForm = ProsForm(request.POST)
+        
+        print(DutiesForm(request.POST))
+        print(SkillsForm(request.POST))
+        print(RequirementsForm(request.POST))
+        print(ProsForm(request.POST))
+
+
+        if careerForm.is_valid():
+            obj = careerForm.save(commit=False)
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if vacancyForm.is_valid():
+            obj = vacancyForm.save(commit=False)
+            obj.author = user
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if dutiesForm.is_valid():
+            obj = dutiesForm.save(commit=False)
+            obj.author = user
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if skillsForm.is_valid():
+            obj = skillsForm.save(commit=False)
+            obj.author = user
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if requirementsForm.is_valid():
+            obj = requirementsForm.save(commit=False)
+            obj.author = user
+            obj.save()
+            
+            return redirect('admin-vacancy')
+        
+        if prosForm.is_valid():
+            obj = prosForm.save(commit=False)
+            obj.author = user
+            obj.save()
+            
+            return redirect('admin-vacancy')
+            
+    
+    context = {
+        'vacancies': vacancies,
+        'user': user,
+        'careerForm': careerForm,
+        'vacancyForm': vacancyForm,
+        'dutiesForm': dutiesForm,
+        'skillsForm': skillsForm,
+        'requirementsForm': requirementsForm,
+        'prosForm': prosForm,
+    }
+    return render(request, 'admin_panel/admin_vacancy.html', context)
+
+
+# def vacancy_detail(request, id):
+#     vacancy = Vacancy.objects.get(id=id)
+    
+#     context = {
+#         'vacancy': vacancy,
+#     }
+    
+#     return render(request, 'admin_panel/modal.html')
+
+
+def delete_vacancy(request, id):
+    vacancy = Vacancy.objects.get(id=id)
+    
+    vacancy.delete()
+    
+    return redirect('admin-vacancy')
+
 
 
 def addAdmin(request):

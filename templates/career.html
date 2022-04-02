@@ -1,5 +1,4 @@
 {% load static %}
-{% load hitcount_tags %}
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -363,9 +362,9 @@
       .feelfree-section {
         background-color: var(--transmax-secondary-color);
         width: 100%;
-        height: 450px;
+        height: auto;
         background-image: url({% static 'wp-content/uploads/2021/06/bg-section.png' %});
-        
+        padding-bottom: 30px;
         
       }
       .main-block_feelfree {
@@ -401,6 +400,17 @@
         text-align: center;
       }
       @media (min-width:350px) and (max-width: 699px) {
+        .main-block_feelfree {
+          width: 70%;
+          margin: auto;
+          height: 400px;
+        }
+        
+        .header-feelfree {
+          font-size: 25px;
+        }
+
+
         .modal-content {
           width: 90%;
         }
@@ -429,7 +439,19 @@
           padding: 0 !important;
         }
       }
-      @media (max-width: 1000px) {
+      @media (min-width: 700px) and (max-width: 1000px) {
+      
+          .main-block_feelfree {
+            width: 70%;
+            margin: auto;
+          }
+
+        .header-feelfree {
+          width: 60%;
+          font-size: 25px;
+          margin: auto;
+        }
+
         .modal-content {
           width: 70%;
         }
@@ -816,7 +838,7 @@
                           <ul id="menu-main" class="menu">
                             <li
                               id="menu-item-5729"
-                              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
+                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
                             >
                               <a href="{% url 'home' %}"
                                 ><span
@@ -863,7 +885,7 @@
                               id="menu-item-2684"
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2684"
                             >
-                              <a href="{% url 'blog' %}"
+                              <a href="blog-grid/index.htm"
                                 ><span
                                   ><span class="item_text">Blog</span></span
                                 >
@@ -873,7 +895,7 @@
                               id="menu-item-3129"
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                             >
-                              <a href="{% url 'brand' %}"
+                              <a href="portfolio-grid/index.htm"
                                 ><span
                                   ><span class="item_text"
                                     >Product</span
@@ -1016,7 +1038,7 @@
                             <li
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2684"
                             >
-                              <a href="{% url 'blog' %}"
+                              <a href="blog-grid/index.htm"
                                 ><span
                                   ><span class="item_text">Blog</span></span
                                 ></a>
@@ -1024,7 +1046,7 @@
                             <li
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                             >
-                              <a href="{% url 'brand' %}"
+                              <a href="portfolio-grid/index.htm"
                                 ><span
                                   ><span class="item_text"
                                     >Product</span
@@ -1110,14 +1132,14 @@
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2684"
                       >
-                        <a href="{% url 'blog' %}"
+                        <a href="blog-grid/index.htm"
                           ><span><span class="item_text">Blog</span></span
                           ></a>
                       </li>
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3129"
                       >
-                        <a href="{% url 'brand' %}"
+                        <a href="portfolio-grid/index.htm"
                           ><span
                             ><span class="item_text">Product</span></span
                           ></a>
@@ -1132,7 +1154,7 @@
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"
                       >
-                        <a href="#"
+                        <a href="contacts/index.htm"
                           ><span><span class="item_text">Careers</span></span
                           ><i class="menu-item__plus"></i
                         ></a>
@@ -1196,7 +1218,7 @@
                 <nav class="primary-nav">
                   <ul id="menu-main-3" class="menu">
                     <li
-                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-316"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
                     >
                       <a href="{% url 'home' %}"
                         ><span><span class="item_text">Home</span></span
@@ -1231,7 +1253,7 @@
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684"
                     >
-                      <a href="{% url 'blog' %}"
+                      <a href="blog-grid/index.htm"
                         ><span><span class="item_text">Blog</span></span
                         ><i class="menu-item__plus"></i
                       ></a>
@@ -1239,7 +1261,7 @@
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3129"
                     >
-                      <a href="{% url 'brand' %}"
+                      <a href="portfolio-grid/index.htm"
                         ><span><span class="item_text">Product</span></span
                         ></a>
                     </li>
@@ -1251,9 +1273,9 @@
                         ></a>
                     </li>
                     <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-394 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-5729 mega-menu mega-menu-links mega-columns-4col"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5082"
                     >
-                      <a href="#"
+                      <a href="shop/index.htm"
                         ><span><span class="item_text">Careers</span></span
                         ></a>
                     </li>
@@ -1312,7 +1334,7 @@
         </div>
       </div>
     </div>
-    <main id="main" class="site-main main-st">
+    <main id="main" class="site-main" style="padding: 0px;">
       <div class="wgl-container">
         <div class="row sidebar_none">
           <div id="main-content" class="wgl_col-12">
@@ -1409,10 +1431,12 @@
                                 <h4
                                   id="wgl-accordion_header-9601"
                                   class="wgl-accordion_header"
-                                  data-default="yes">
-                                  <span class="wgl-accordion_title">Administrative Assistant, KOICA Uzbekistan Office</span>
-                                  <span class="glyphicon glyphicon-eye-open"></span>
-                                  <i class="wgl-accordion_icon elementor-icon"></i>
+                                  data-default="yes"]>
+                                  <span class="wgl-accordion_title"
+                                    >Administrative Assistant, KOICA Uzbekistan Office</span
+                                  ><i
+                                    class="wgl-accordion_icon elementor-icon"
+                                  ></i>
                                 </h4>
                                 <div class="wgl-accordion_content" style="padding: 0px 0px 65px 0px;">
                                   <p>
@@ -1811,8 +1835,6 @@
                   <div class="main-block_feelfree">
                     <div class="header-feelfree">
                       If you have any question about job please fell free to contact us.
-                    </div>
-                    <div class="description-feelfree">
                       CV-Cluster is the world&#8217;s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade.
                     </div>
                     		
@@ -1861,10 +1883,11 @@
                   data-id="914a826"
                   data-element_type="section"
                   data-settings='{"background_background":"classic"}'
+                  style="padding: 50px 0px"
                 >
                   <div class="elementor-container elementor-column-gap-default">
                     <div
-                      class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-d3a711d"
+                      class="elementor-column elementor-col-40 elementor-top-column elementor-element elementor-element-d3a711d"
                       data-id="d3a711d"
                       data-element_type="column"
                     >
@@ -1876,6 +1899,8 @@
                           data-id="d813959"
                           data-element_type="widget"
                           data-widget_type="wgl-header-logo.default"
+                          style="align-items: center; text-align: center;"
+
                         >
                           <div class="elementor-widget-container">
                             <div class="wgl-logotype-container default_logo">
@@ -1884,7 +1909,7 @@
                                   class="default_logo"
                                   src="{% static 'wp-content/uploads/2021/06/logo1.png' %}"
                                   alt="logotype"
-                                  style="height: 43px"
+                                  style="height: 43px; align-items:center; text-align:center;"
                               /></a>
                             </div>
                           </div>
@@ -1903,7 +1928,7 @@
                               <span style="color: #202020; font-weight: bold"
                                 >Address:</span
                               >
-                              27 Division St, New York, NY 10002, USA
+                              27 Mustaqillik St, Tashkent, TA 10002, UZBEKISTAN
                             </p>
                             <p
                               class="theme-header-font"
@@ -1912,7 +1937,7 @@
                               <span style="color: #202020; font-weight: bold"
                                 >Website:</span
                               >
-                              CV-Cluster.com
+                              cvcluster.com
                             </p>
                             <p
                               class="theme-header-font"
@@ -1922,7 +1947,7 @@
                                 >Email:</span
                               >
                               <a href="mailto:transmax@mail.com"
-                                >transmax@mail.com</a
+                                >cv-cluster@admin.com</a
                               >
                             </p>
                             <p class="theme-header-font">
@@ -1936,9 +1961,11 @@
                       </div>
                     </div>
                     <div
-                      class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-92d4dba"
+                      class="elementor-column elementor-col-30 elementor-top-column elementor-element elementor-element-92d4dba"
                       data-id="92d4dba"
                       data-element_type="column"
+                      style="align-items: center; text-align: center;"
+
                     >
                       <div
                         class="elementor-widget-wrap elementor-element-populated"
@@ -1962,46 +1989,50 @@
                           data-id="ad69e4d"
                           data-element_type="widget"
                           data-widget_type="text-editor.default"
+                          
                         >
                           <div class="elementor-widget-container">
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Just-In-Time delivery</a
+                              >Home</a
+                            >
+                            
+                            <a
+                              href="../about-us/index.htm"
+                              class="theme-header-font"
+                              style="margin-bottom: 6px; display: block"
+                              >About Us</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Time based service levels</a
+                              >Blog</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Warehousing</a
-                            >
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="margin-bottom: 6px; display: block"
-                              >Global stock transparency</a
+                              >Product</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="display: block"
-                              >Transport consolidation</a
+                              >Career</a
                             >
+                            
                           </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-469cd11"
+                      class="elementor-column elementor-col-30 elementor-top-column elementor-element elementor-element-469cd11"
                       data-id="469cd11"
                       data-element_type="column"
+                      style="align-items: center; text-align: center;"
                     >
                       <div
                         class="elementor-widget-wrap elementor-element-populated"
@@ -2015,8 +2046,8 @@
                           <div class="elementor-widget-container">
                             <span
                               class="theme-header-font"
-                              style="color: #003b49"
-                              >Industry Sectors</span
+                              style="color:var(--transmax-secondary-color)"
+                              >Contacts</span
                             >
                           </div>
                         </div>
@@ -2031,94 +2062,31 @@
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Electronics Industry</a
+                              > <i class="fab fa-telegram"></i> Telegram </a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Industrial &amp; Manufacturing</a
+                              > <i class="fab fa-instagram"></i> Instagram</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Semicon &amp; Solar</a
+                              > <i class="fab fa-twitter"></i> Twitter</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="margin-bottom: 6px; display: block"
-                              >Oil &amp; Gas Cargo</a
+                              > <i class="fab fa-linkedin"></i> LinkedIn</a
                             >
                             <a
                               href="../about-us/index.htm"
                               class="theme-header-font"
                               style="display: block"
-                              >Energy &amp; Chemicals</a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-28eb222"
-                      data-id="28eb222"
-                      data-element_type="column"
-                    >
-                      <div
-                        class="elementor-widget-wrap elementor-element-populated"
-                      >
-                        <div
-                          class="elementor-element elementor-element-a46b3b1 elementor-widget elementor-widget-text-editor"
-                          data-id="a46b3b1"
-                          data-element_type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          <div class="elementor-widget-container">
-                            <span
-                              class="theme-header-font"
-                              style="color: #003b49"
-                              >Quick Links</span
-                            >
-                          </div>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-6e99a5c hover_links elementor-widget elementor-widget-text-editor"
-                          data-id="6e99a5c"
-                          data-element_type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          <div class="elementor-widget-container">
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="margin-bottom: 6px; display: block"
-                              >How it Works</a
-                            >
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="margin-bottom: 6px; display: block"
-                              >Help Link</a
-                            >
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="margin-bottom: 6px; display: block"
-                              >Terms &amp; Conditions</a
-                            >
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="margin-bottom: 6px; display: block"
-                              >Contact Us</a
-                            >
-                            <a
-                              href="../about-us/index.htm"
-                              class="theme-header-font"
-                              style="display: block"
-                              >Privacy Policy</a
+                              > <i class="fab fa-facebook"></i> Facebook</a
                             >
                           </div>
                         </div>
@@ -2183,6 +2151,7 @@
         </div>
       </div>
     </footer>
+    
 
     <a href="#" id="scroll_up"></a>
 

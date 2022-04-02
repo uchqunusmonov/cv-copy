@@ -20,7 +20,7 @@ class VacancyAdmin(admin.ModelAdmin):
 
 @admin.register(Duties)
 class DutiesAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'text']
+    display_fields = ['id', 'dutie']
 
 
 @admin.register(Skills)
@@ -30,12 +30,12 @@ class SkillsAdmin(admin.ModelAdmin):
 
 @admin.register(Requirements)
 class RequirementsAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'text']
+    display_fields = ['id', 'requirement']
 
 
 @admin.register(Pros)
 class ProsAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'text']
+    display_fields = ['id', 'pros']
 
 
 @admin.register(Resume)
