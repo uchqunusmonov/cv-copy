@@ -1,0 +1,176 @@
+{% extends 'admin_panel/base_admin.html' %}
+{% load static %}
+{% block content %}
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                {% comment %} Our Pages {% endcomment %}
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Blog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Brend
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Vacancy
+                    </a>
+                </li>
+
+                <li class="active has-sub">
+                    <a href="{% url 'admin_product' %}" class="js-arrow">
+                        <i class="fas fa-chart-bar"></i>
+                        Product
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chart.html">
+                        <i class="fas fa-chart-bar"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Pages</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="login.html">Login</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li>
+                            <a href="forget-pass.html">Forget Password</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+      <!-- HEADER DESKTOP-->
+      <header class="header-desktop">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="header-wrap">
+                    <div class="header-button">
+                        <div class="account-wrap" style="display: flex">
+                            <div class="account-item clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">john doe</a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#">john doe</a>
+                                            </h5>
+                                            <span class="email">johndoe@example.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="{% url 'profile' request.user.username %}"><i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item" style="border-top: 1px solid #f2f2f2;">
+                                            <a href="{% url 'add-admin' %}"><i class="zmdi zmdi-account-add"></i>Add admin</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a href="{% url 'logout' %}"><i class="zmdi zmdi-power"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <h2 class="title-1 m-b-25">List of Products</h2>
+                                <div class="table-responsive table--no-card m-b-40 layer" >
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>product ID</th>
+                                                <th>name</th>
+                                                <th class="text-right">brand</th>
+                                                <th class="text-right">+Edit</th>
+                                                <th class="text-right">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        {% for el in product %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ el.id }}</td>
+                                                <td>{{ el.title }}</td>
+                                                <td class="text-right">{{ el.brand }}</td>
+                                                <td class="text-right"><a href="{% url 'editproduct' el.slug %}" class="au-btn-icon au-btn--green" style="color: white; width: 120%; text-align: center; border-radius: 5px;">Edit</a></td>
+                                                <td class="text-right"><a href="{% url 'delete' el.pk %}" class="au-btn-icon" style="color: white; width: 120%; text-align: center; border-radius: 5px; background-color: red;">Delete</a></td>
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="au-btn au-btn-icon au-btn--green"><a href="{% url 'add_product' %}" style="color: white;">
+                                    +ADD Product</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+
+{% endblock content %}
