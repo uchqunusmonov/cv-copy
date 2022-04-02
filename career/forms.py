@@ -21,30 +21,6 @@ class ResumeForm(forms.ModelForm):
         fields = ['name', 'email', 'phone_number', 'file']
 
 
-class DutiesForm(forms.ModelForm):
-    class Meta:
-        model = Duties
-        fields = ['dutie', ]
-
-
-class SkillsForm(forms.ModelForm):
-    class Meta:
-        model = Skills
-        fields = ['name', ]
-
-
-class RequirementsForm(forms.ModelForm):
-    class Meta:
-        model = Requirements
-        fields = ['requirement', ]
-
-
-class ProsForm(forms.ModelForm):
-    class Meta:
-        model = Pros
-        fields = ['pros', ]
-
-
 class VacancyForm(forms.ModelForm):
     class Meta:
         model = Vacancy

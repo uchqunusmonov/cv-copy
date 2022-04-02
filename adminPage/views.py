@@ -59,26 +59,12 @@ def admin_vacancy(request):
     careerForm = CareerForm(instance=careerInfo)
 
     vacancyForm = VacancyForm()
-    dutiesForm = DutiesForm()
-    skillsForm = SkillsForm()
-    requirementsForm = RequirementsForm()
-    prosForm = ProsForm()
 
     
     if request.POST:
         careerForm = CareerForm(request.POST or None, request.FILES or None, instance=careerInfo)
 
         vacancyForm = VacancyForm(request.POST, request.FILES)
-        dutiesForm = DutiesForm(request.POST)
-        skillsForm = SkillsForm(request.POST)
-        requirementsForm = RequirementsForm(request.POST)
-        prosForm = ProsForm(request.POST)
-        
-        print(DutiesForm(request.POST))
-        print(SkillsForm(request.POST))
-        print(RequirementsForm(request.POST))
-        print(ProsForm(request.POST))
-
 
         if careerForm.is_valid():
             obj = careerForm.save(commit=False)
@@ -88,50 +74,17 @@ def admin_vacancy(request):
         
         if vacancyForm.is_valid():
             obj = vacancyForm.save(commit=False)
-            print(obj, '/////////////////////////////////////')
             obj.author = user
             obj.save()
             
             return redirect('admin-vacancy')
         
-        if dutiesForm.is_valid():
-            obj = dutiesForm.save(commit=False)
-            obj.author = user
-            obj.save()
-            
-            return redirect('admin-vacancy')
-        
-        if skillsForm.is_valid():
-            obj = skillsForm.save(commit=False)
-            obj.author = user
-            obj.save()
-            
-            return redirect('admin-vacancy')
-        
-        if requirementsForm.is_valid():
-            obj = requirementsForm.save(commit=False)
-            obj.author = user
-            obj.save()
-            
-            return redirect('admin-vacancy')
-        
-        if prosForm.is_valid():
-            obj = prosForm.save(commit=False)
-            obj.author = user
-            obj.save()
-            
-            return redirect('admin-vacancy')
-            
     
     context = {
         'vacancies': vacancies,
         'user': user,
         'careerForm': careerForm,
         'vacancyForm': vacancyForm,
-        'dutiesForm': dutiesForm,
-        'skillsForm': skillsForm,
-        'requirementsForm': requirementsForm,
-        'prosForm': prosForm,
     }
     return render(request, 'admin_panel/admin_vacancy.html', context)
 

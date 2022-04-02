@@ -338,7 +338,7 @@
                                 <div class="au-card-inner">
                                     <div class="table-responsive">
                                         <form class="form form-top-countries" method="post" enctype="multipart/form-data">{% csrf_token %}
-                                            {% comment %} <div class="career">
+                                            <div class="career">
                                                 <label for="last_name">Name:</label>
                                                 <input id="last_name" type="name" placeholder="Name" name="name">
                                             </div>
@@ -351,12 +351,18 @@
                                                 <input id="salary" type="number" placeholder="enter the currency in dollars" name="salary">
                                             </div>
                                             <div class="career">
-                                                <label for="jobtype">Jobtype:</label>
-                                                <input  id="jobtype" type="text" placeholder="Job type" name="job_type">
+                                                <label for="job_type">Job type:</label>
+                                                <select name="" id="job_ads" style="width: 70%">
+                                                    <option value="online">Offline</option>
+                                                    <option value="offline">Online</option>
+                                                </select>
                                             </div>
                                             <div class="career">
                                                 <label for="graph">Graph:</label>
-                                                <input id="graph" type="text" placeholder="Graph" name="graph">
+                                                <select name="" id="graph" style="width: 70%">
+                                                    <option value="online">Full time</option>
+                                                    <option value="offline">Part time</option>
+                                                </select>
                                             </div>
                                             <div class="career">
                                                 <label for="active_date">Active Date:</label>
@@ -381,70 +387,13 @@
                                             <div class="career">
                                                 <label for="skills"></label>
                                                 <input id="skills" type="text" placeholder="Skills" name="skills">
-                                            </div> {% endcomment %}
+                                            </div>
                                             {% comment %} {% for form in vacancyForm %}
                                                 <p style="margin-top: 50px; color: white">{{ form.name }}</p>
                                                 <p>{{ form }}</p>
                                             {% endfor %} {% endcomment %}
-                                            {{ vacancyForm.as_p }}
                                             <button class="btn btn-info button1">Create</button>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h2 class="title-1 m-b-25">CREATE DUTIES</h2>
-                                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
-                                        <div class="au-card-inner">
-                                            <div class="table-responsive">
-                                                <form class="form form-top-countries" method="post">{% csrf_token %}
-                                                    {{ dutiesForm }}
-                                                    <button class="btn btn-info button2">Create</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <h2 class="title-1 m-b-25">CREATE PROS</h2>
-                                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
-                                        <div class="au-card-inner">
-                                            <div class="table-responsive">
-                                                <form class="form form-top-countries" method="post">{% csrf_token %}
-                                                    {{ prosForm }}
-                                                    <button class="btn btn-info button2">Create</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <h2 class="title-1 m-b-25">CREATE SKILLS</h2>
-                                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
-                                        <div class="au-card-inner">
-                                            <div class="table-responsive">
-                                                <form class="form form-top-countries" method="post">{% csrf_token %}
-                                                    {{ skillsForm }}
-                                                    <button class="btn btn-info button2">Create</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <h2 class="title-1 m-b-25">CREATE REQUIREMENTS</h2>
-                                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
-                                        <div class="au-card-inner">
-                                            <div class="table-responsive">
-                                                <form class="form form-top-countries" method="post">{% csrf_token %}
-                                                    {{ requirementsForm }}
-                                                    <button class="btn btn-info button2">Create</button>
-                                                </form>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -18,25 +18,6 @@ class VacancyAdmin(admin.ModelAdmin):
 
     #     return self
 
-@admin.register(Duties)
-class DutiesAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'dutie']
-
-
-@admin.register(Skills)
-class SkillsAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'name']
-
-
-@admin.register(Requirements)
-class RequirementsAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'requirement']
-
-
-@admin.register(Pros)
-class ProsAdmin(admin.ModelAdmin):
-    display_fields = ['id', 'pros']
-
 
 @admin.register(Resume)
 class CvAdmin(admin.ModelAdmin):

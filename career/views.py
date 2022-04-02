@@ -6,7 +6,16 @@ from .forms import *
 
 def career(request):
     vacancies = Vacancy.objects.filter(active=True)
-    career = Career.objects.all().first()
+    career = Career.objects.first()
+    
+    # resumeForm = ResumeForm()
+    
+    # if request.POST:
+    #     resumeForm = ResumeForm(request.POST, request.FILES)
+        
+    #     if resumeForm.is_valid():
+    #         obj = resumeForm.save(commit=False)
+    #         obj.vacancy = 
     
     context = {
         'vacancies': vacancies,
