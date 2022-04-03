@@ -1,3 +1,4 @@
+from django.http import FileResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import login, logout
@@ -55,6 +56,7 @@ def user_login(request):
 
 def admin_vacancy(request):
     vacancies = Vacancy.objects.all().order_by('-updated_date')
+    resumes = Resume.objects.all().order_by('-created_date')
     user = request.user
     careerInfo = Career.objects.first()
     
@@ -83,6 +85,7 @@ def admin_vacancy(request):
         
     
     context = {
+        'resumes': resumes,
         'vacancies': vacancies,
         'user': user,
         'careerForm': careerForm,
@@ -107,6 +110,17 @@ def delete_vacancy(request, id):
     vacancy.delete()
     
     return redirect('admin-vacancy')
+
+def delete_resume(request, id):
+    resume = Resume.objects.get(id=id)
+    resume.delete()
+    return redirect('admin-vacancy')
+
+def download_resume(request, id):
+    resume = Resume.objects.get(id=id)
+    filename = resume.file.path
+    response = FileResponse(open(filename, 'rb'))
+    return response
 
 
 

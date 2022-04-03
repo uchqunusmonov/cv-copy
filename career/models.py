@@ -13,7 +13,7 @@ from adminPage.models import User
 class Career(models.Model):
     name = models.CharField(max_length=500)
     background = models.ImageField(upload_to='Career/images/')
-    job_ads = models.TextField(verbose_name='Job advertisement title')
+    job_ads = RichTextField()
     tel = models.CharField(max_length=100)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
